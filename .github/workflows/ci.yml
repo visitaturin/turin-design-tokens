@@ -1,0 +1,43 @@
+name: Pull Request Check
+
+on: pull_request
+
+jobs:
+  check:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node }}
+
+      - name: Cache node modules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
+        with:
+          path: |
+            ~/.npm
+            # Generate a new cache whenever packages or source files change.
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }}-
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      # - name: Setup git
+      #   uses: oleksiyrudenko/gha-git-credentials@v2.1
+      #   with:
+      #     token: '${{ secrets.GH_TOKEN }}'
+      #     name: '${{ secrets.GH_USER }}'
+      #     email: '${{ secrets.GH_USER_EMAIL }}'
+
+      # - name: Setup git keys
+      #   run: git config --global url."https://${{ secrets.GH_TOKEN }}@github.com/".insteadOf ssh://git@github.com/
+
+      - name: Install
+        run: yarn install
+
+      - name: Build
+        run: yarn build
