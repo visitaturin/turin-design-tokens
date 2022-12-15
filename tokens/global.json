@@ -614,14 +614,14 @@
       "default": {
         "type": "custom-fontStyle",
         "value": {
-          "fontSize": 12,
+          "fontSize": 14,
           "textDecoration": "none",
           "fontFamily": "Inter",
           "fontWeight": 400,
           "fontStyle": "normal",
           "fontStretch": "normal",
           "letterSpacing": 0,
-          "lineHeight": 13.2,
+          "lineHeight": 15.4,
           "paragraphIndent": 0,
           "paragraphSpacing": 0,
           "textCase": "none"
