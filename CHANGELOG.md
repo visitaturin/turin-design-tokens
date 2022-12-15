@@ -1,3 +1,10 @@
+## [1.0.1](https://github.com/visitaturin/turin-design-tokens/compare/v1.0.0...v1.0.1) (2022-12-15)
+
+
+### Bug Fixes
+
+* check updates ([ca68dea](https://github.com/visitaturin/turin-design-tokens/commit/ca68dea10a8d331352635359c56c332e2ebff995))
+
 # 1.0.0 (2022-12-04)
 
 

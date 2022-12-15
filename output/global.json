@@ -319,14 +319,14 @@
       "textTransform": "none"
     },
     "badge-default": {
-      "fontSize": 12,
+      "fontSize": 14,
       "textDecoration": "none",
       "fontFamily": "inter",
       "fontWeight": 400,
       "fontStyle": "normal",
       "fontStretch": "normal",
       "letterSpacing": 0,
-      "lineHeight": "13.2px",
+      "lineHeight": "15.4px",
       "paragraphIndent": 0,
       "textTransform": "none"
     }
